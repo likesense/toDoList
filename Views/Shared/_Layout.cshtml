@@ -31,8 +31,8 @@
     <div class = "container">
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Выполнение задачи</span>
+                <h4 class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-muted">Выполненные задачи</span>
                     <span class="badge badge-secondary badge card-header-pills text-muted" id="countOfComplitedTasks"></span>
                 </h4>
                 <ul class="list-group mb-3" id="complitedListTasks"></ul>
@@ -43,7 +43,7 @@
                 </form>
                 <br/>
                 <div class="form-group">
-                    <label>Заметки для себя</label>
+                    <label class="text-muted">Заметки для себя</label>
                     <textarea class="form-control" rows="3"></textarea>
                 </div>
                 <div class="col-md-8 order-md-1 "></div>
@@ -53,12 +53,6 @@
         </div>
     </div>
 </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - toDoList - <a asp-area="">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
