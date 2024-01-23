@@ -1,9 +1,19 @@
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks.Sources;
 using toDoList.DAL;
+using toDoList.DAL.Interfaces;
+using toDoList.DAL.Repositories;
+using toDoList.Domain.Entity;
+using toDoList.Service.Implementation;
+using toDoList.Service.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();//check updates without refresh the project
+//addService
+builder.Services.AddScoped<IBaseRepository<TaskEntity>, TaskRepository>();
+//registerService
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 var connectionString = builder.Configuration.GetConnectionString("MSSQL");//adding a connection string for mssql
 builder.Services.AddDbContext<AppDbContext>(options =>
