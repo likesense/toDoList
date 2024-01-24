@@ -33,15 +33,15 @@
                         title: 'Информация',
                         text: response.description,
                         icon: 'success',
-                        confirmButtonText: 'Хорошо'
+                        confirmButtonText: 'Хорошо',
                     })
-                }
+                },
                 error: function (response) {
                      Swal.fire({
                             title: 'Информация',
-                            text: response.responseJson.description,
+                            text: response.responseJSON.description,
                             icon: 'error',
-                            confirmButtonText: 'Ой, ой что-то не так'
+                            confirmButtonText: 'Ой, ой что-то не так',
                         })
                 }
             })

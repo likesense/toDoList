@@ -11,9 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();//check updates without refresh the project
 //addService
-builder.Services.AddScoped<IBaseRepository<TaskEntity>, TaskRepository>();
+//builder.Services.AddScoped<IBaseRepository<TaskEntity>, TaskRepository>();
 //registerService
+//builder.Services.AddScoped<ITaskService, TaskService>();
+
+builder.Services.AddScoped<IBaseRepository<TaskEntity>, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
+
+
 
 var connectionString = builder.Configuration.GetConnectionString("MSSQL");//adding a connection string for mssql
 builder.Services.AddDbContext<AppDbContext>(options =>
